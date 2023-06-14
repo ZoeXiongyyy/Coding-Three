@@ -1,6 +1,6 @@
 # Coding Three Final Project -Experimenting with Interactive Possibilities of DCGAN
 
-Yuzhu Xiong
+Yuzhu Xiong 21003975
 
 ## Basic introduction
 
@@ -36,12 +36,12 @@ Throughout my exploration, I have experimented with several machine learning mod
 
 The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ) is the [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). I changed the original dataset by  downloading the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset from Kaggle，the reference of importing dataset from kaggle to colab is [here](https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/) .
 
-- code modification
+- **code modification**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/Screenshot%202023-06-14%20at%2011.17.13.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- training results(num_epoch = 5,batch_size = 128, nz(latent vector) = )
+- **training results(num_epoch = 5,batch_size = 128, wokers = 4, nz(latent vector) = 100)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%205.png"
      alt="Markdown Monster icon"
@@ -51,11 +51,11 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-### Train2-**Changing epoch**
+### Train2-**Changing epoch
 
 After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
 
-- test1(num_epoch = 40)
+- **test1(num_epoch = 40)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%2040.png"
      alt="Markdown Monster icon"
@@ -65,7 +65,7 @@ After changing the dataset, I conducted two tests to evaluate the performance of
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
-- test2(num_epoch = 100)
+- **test2(num_epoch = 100)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%20100.png"
      alt="Markdown Monster icon"
@@ -95,7 +95,7 @@ The default value of batch_size in this notebook  is 128, I made 2 tests to chan
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- test2(num_epoch = 256)
+- test2(batch_size  = 256)
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%20256.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -112,12 +112,88 @@ The choice of batch size can indeed have a noticeable impact on the outcome perf
 
 2. Overfitting and Underfitting: Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. This can result in underfitting, where the model fails to capture the full color range and variations in the dataset. Conversely, an excessively high batch size can lead to overfitting, where the model becomes too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
 
+### Train4-**Changing number of workers**
+
+The workers parameter in the DataLoader class determines the number of worker threads used for loading the data. It specifies how many subprocesses to use for data loading. I conducted two tests where I varied the workers value, and it appears that changing the workers value did not have a direct impact on the training outcome.
+
+- **test1(workers = 8)**
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%208.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/8workers.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+- **test2(workers = 16)**
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%2016.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/16workers.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+**Insights:** 
+
+The primary purpose of using multiple worker threads is to enhance data loading efficiency, particularly when dealing with large datasets. However, the impact on the training outcome may not be immediately apparent in all scenarios. The influence of the workers parameter depends on various factors, including the complexity of the data loading process, hardware configuration, and dataset size.
+
+### Train5-**Changing latent vector**
+
+the latent vector in the original notebook is called nz, and the default value of nz is 100， and I made 2 changes(nz = 200, nz = 50) to observe the outcome.
+
+- test1(nz = 200)
 
 
+- test2(nz= 50)
+
+**Insights:** 
+
+I observed that using a latent vector size of 100 leads to better training outcomes compared to smaller (e.g., 50) or larger (e.g., 200) sizes. I think this might because of :
+
+1. Model Complexity: The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
+2. Dimensionality Mismatch: The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution. As a result, the generated samples may lack quality and diversity. On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
+
+### Train6 & Final-Interactive possibilities experiements
+
+In the Train6 and Final experiments, I aimed to make the model more interactive by referencing various resources such as [Using Interact](https://colab.research.google.com/drive/1CXrsbypB-BZY6J6fvsrUgogBGof5gedN#scrollTo=3noK7P5_9gpv), [Forms](https://colab.research.google.com/notebooks/forms.ipynb#scrollTo=ig8PIYeLtM8g), and [BabyGAN](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb).
+
+I explored two different approaches to enable interaction with the code. The first approach involved using markdown language to create interactive user interfaces (UIs). However, this method only allowed for changing the input values in the original code and did not directly interact with the running results.
+
+- interactive UI written by markdown
+
+The second method involved importing ipywidgets, which allowed me to create UI elements such as buttons and sliders that could directly interact with the running code and manipulate the results. This approach provided more dynamic and real-time interaction with the model, allowing users to input information, open or hide images, and even filter the result process.
+
+- interaction created with the import of  ipywidgets
+
+**Insights:** 
+
+Enabling code and result interaction through UIs can significantly improve the usability and accessibility of the model for a wider audience. However, there are certain limitations to consider.
+
+For example, when dealing with large animations in the results, the program may often encounter issues. This could be due to the animation.embed_limit being set too small (plt.rcParams['animation.embed_limit'] = 30). Even when adjusting the value of animation.embed_limit, the program may still become disconnected. This issue may be related to the complexity of the animation itself.
+
+Furthermore, if the animation size exceeds the limitation, it can result in dropped frames and incomplete animations. In some cases, it may also lead to program disconnection.
+
+Additionally, the running time of the experiments is quite long, especially when loading animations and images. Efforts should be made to optimize the runtime to improve efficiency.
+
+Overall, exploring interactive possibilities with the model enhances its usability but requires careful consideration of limitations and performance optimization.
 ## Dataset
-
+https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
 ## Third-party resources
+https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
 
-## Clarification
+https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/dcgan.ipynb#scrollTo=NFC2ghIdiZYE
+
+https://observablehq.com/@stwind/latent-flowers-ganden
+
+https://github.com/HackerPoet/Avant-Garfield
+
+https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
+
+http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
+https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ
+
+https://openai.com/blog/chatgpt
 
 
