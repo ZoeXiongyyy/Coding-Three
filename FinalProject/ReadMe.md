@@ -1,4 +1,4 @@
-# Coding Three Final Project -Experimenting with Interactive Possibilities of DCGAN
+# Coding Three Final Project
 
 Yuzhu Xiong 21003975
 
