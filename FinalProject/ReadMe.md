@@ -32,10 +32,56 @@ Throughout my exploration, I have experimented with several machine learning mod
 
 
 
-### Changing dataset
+### Train1-**Changing dataset**
 
+The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ) is the [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). I changed the original dataset by  downloading the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset from Kaggle，the reference of importing dataset from kaggle to colab is [here](https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/) .
 
-### Input experiments
+- code modification
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/Screenshot%202023-06-14%20at%2011.17.13.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+### Train2-**Changing epoch**
+
+After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
+
+- original results(num_epoch = 5)
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%205.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/5epoch.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+- test1(num_epoch = 40)
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%2040.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/40epoch.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
+- test2(num_epoch = 100)
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%20100.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/100epoch.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
+**Insights:** 
+
+1. Time and Training: Increasing the epoch value results in a longer training time as the model requires more iterations to learn. However, it also provides more opportunities for the model to converge and reach a stable equilibrium.
+ 
+2. Result Quality: I observed that with higher epoch values, the model tends to produce better results. This can be attributed to the increased learning time, allowing the model to capture more nuanced patterns and generate higher-quality outputs.
+
+3. Discriminator Accuracy: More epochs also provide the discriminator with more training iterations, enabling it to improve its accuracy in distinguishing between real and fake images. This improved accuracy puts more pressure on the generator to produce more realistic images.
 
 ### Interaction possibilities tests
 
