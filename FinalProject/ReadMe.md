@@ -12,11 +12,19 @@ The inspiration for this project came from the intriguing work called [Latent Fl
 
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
+[![Alt Text](https://img.youtube.com/vi/LMCqDXUKD2I/0.jpg)](https://www.youtube.com/watch?v=LMCqDXUKD2I)
+
 **Video of interact with results**
+
+[![Alt Text](https://img.youtube.com/vi/mlKNuTo6hj8/0.jpg)](https://www.youtube.com/watch?v=mlKNuTo6hj8)
 
 **Video of interact with epoch**
 
+[![Alt Text](https://img.youtube.com/vi/_zgJmDx9LkM/0.jpg)](https://www.youtube.com/watch?v=_zgJmDx9LkM)
+
 **Video of the complete running process**
+
+[![Alt Text](https://img.youtube.com/vi/Tikv14jzoU4/0.jpg)](https://www.youtube.com/watch?v=Tikv14jzoU4)
 
 ## Development process
 
@@ -27,10 +35,6 @@ During my research, I compared different resources and tutorials, and I found th
 
 **P.S. - Choosing the Machine Learning Model**
 Throughout my exploration, I have experimented with several machine learning models and attempted to modify their datasets. However, I encountered challenges with some of them. For instance, the [BabyGAN](https://github.com/tg-bomze/BabyGAN) and [Fix the Noise: Disentangling Source Feature for Controllable Domain Translation](https://github.com/LeeDongYeun/FixNoise) models were unsuccessful in running properly. Additionally, I faced limitations in changing the dataset for models such as [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [FixNoise](https://github.com/LeeDongYeun/FixNoise).
-
-**Record of Additional Failed Experiments**
-
-
 
 ### Train1-**Changing dataset**
 
@@ -143,9 +147,23 @@ The primary purpose of using multiple worker threads is to enhance data loading 
 the latent vector in the original notebook is called nz, and the default value of nz is 100， and I made 2 changes(nz = 200, nz = 50) to observe the outcome.
 
 - test1(nz = 200)
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/nz%20%3D%20200.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/200nz.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
 - test2(nz= 50)
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/nz%3D50.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/50nz.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
 **Insights:** 
 
