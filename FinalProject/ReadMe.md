@@ -41,7 +41,7 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- training results(num_epoch = 5,batch_size = 128, nz(latent vector) = )
+- training results(num_epoch = 5,batch_size = 128, wokers = 4, nz(latent vector) = )
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%205.png"
      alt="Markdown Monster icon"
@@ -95,7 +95,7 @@ The default value of batch_size in this notebook  is 128, I made 2 tests to chan
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- test2(num_epoch = 256)
+- test2(batch_size  = 256)
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%20256.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -112,7 +112,31 @@ The choice of batch size can indeed have a noticeable impact on the outcome perf
 
 2. Overfitting and Underfitting: Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. This can result in underfitting, where the model fails to capture the full color range and variations in the dataset. Conversely, an excessively high batch size can lead to overfitting, where the model becomes too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
 
+### Train4-**Changing number of workers**
 
+The workers parameter in the DataLoader class determines the number of worker threads used for loading the data. It specifies how many subprocesses to use for data loading. I conducted two tests where I varied the workers value, and it appears that changing the workers value did not have a direct impact on the training outcome.
+
+- test1(workers = 8)
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%208.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/8workers.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+- test2(workers = 16)
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%2016.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/16workers.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+**Insights:** 
+
+The primary purpose of using multiple worker threads is to enhance data loading efficiency, particularly when dealing with large datasets. However, the impact on the training outcome may not be immediately apparent in all scenarios. The influence of the workers parameter depends on various factors, including the complexity of the data loading process, hardware configuration, and dataset size.
 
 ## Dataset
 
