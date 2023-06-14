@@ -254,4 +254,5 @@ https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downlo
 
 https://openai.com/blog/chatgpt
 
+https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/
 
