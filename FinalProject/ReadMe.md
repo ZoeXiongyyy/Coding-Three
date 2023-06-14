@@ -1,6 +1,6 @@
 # Coding Three Final Project -Experimenting with Interactive Possibilities of DCGAN
 
-Yuzhu Xiong
+Yuzhu Xiong 21003975
 
 ## Basic introduction
 
@@ -36,12 +36,12 @@ Throughout my exploration, I have experimented with several machine learning mod
 
 The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ) is the [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). I changed the original dataset by  downloading the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset from Kaggle，the reference of importing dataset from kaggle to colab is [here](https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/) .
 
-- code modification
+- **code modification**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/Screenshot%202023-06-14%20at%2011.17.13.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- training results(num_epoch = 5,batch_size = 128, wokers = 4, nz(latent vector) = )
+- **training results(num_epoch = 5,batch_size = 128, wokers = 4, nz(latent vector) = 100)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%205.png"
      alt="Markdown Monster icon"
@@ -51,11 +51,11 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-### Train2-**Changing epoch**
+### Train2-**Changing epoch
 
 After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
 
-- test1(num_epoch = 40)
+- **test1(num_epoch = 40)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%2040.png"
      alt="Markdown Monster icon"
@@ -65,7 +65,7 @@ After changing the dataset, I conducted two tests to evaluate the performance of
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
-- test2(num_epoch = 100)
+- **test2(num_epoch = 100)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%20100.png"
      alt="Markdown Monster icon"
@@ -116,7 +116,7 @@ The choice of batch size can indeed have a noticeable impact on the outcome perf
 
 The workers parameter in the DataLoader class determines the number of worker threads used for loading the data. It specifies how many subprocesses to use for data loading. I conducted two tests where I varied the workers value, and it appears that changing the workers value did not have a direct impact on the training outcome.
 
-- test1(workers = 8)
+- **test1(workers = 8)**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%208.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -125,7 +125,7 @@ The workers parameter in the DataLoader class determines the number of worker th
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- test2(workers = 16)
+- **test2(workers = 16)**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/workers%20%3D%2016.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -137,6 +137,23 @@ The workers parameter in the DataLoader class determines the number of worker th
 **Insights:** 
 
 The primary purpose of using multiple worker threads is to enhance data loading efficiency, particularly when dealing with large datasets. However, the impact on the training outcome may not be immediately apparent in all scenarios. The influence of the workers parameter depends on various factors, including the complexity of the data loading process, hardware configuration, and dataset size.
+
+### Train5-**Changing latent vector**
+
+the latent vector in the original notebook is called nz, and the default value of nz is 100， and I made 2 changes(nz = 200, nz = 50) to observe the outcome.
+
+- test1(nz = 200)
+
+
+- test2(nz= 50)
+
+**Insights:** 
+
+I observed that using a latent vector size of 100 leads to better training outcomes compared to smaller (e.g., 50) or larger (e.g., 200) sizes. I think this might because of :
+
+1. Model Complexity: The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
+2. Dimensionality Mismatch: The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution. As a result, the generated samples may lack quality and diversity. On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
+
 
 ## Dataset
 
