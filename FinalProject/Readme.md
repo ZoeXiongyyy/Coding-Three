@@ -10,8 +10,15 @@ The project inspiration is from [Latent Flowers GANden](https://observablehq.com
 
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
-**Video of interact with epoch**
 
+<video controls>
+  <source src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/animation.mp4" type="video/mp4">
+</video>
+
+**Video of interact with results**
+https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/coding3-final2.mp4
+**Video of interact with epoch**
+https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/coding3-final3.mp4
 **Video of the complete running process**
 
 ## Development process
