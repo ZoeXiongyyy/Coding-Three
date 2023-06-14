@@ -2,6 +2,8 @@
 
 Yuzhu Xiong 21003975
 
+**FinalProject Colab link:** https://colab.research.google.com/drive/1lIiJ-Zj3uaQI-s3h0VYwr-8qQfj30omG?usp=sharing
+
 ## Basic introduction
 
 In this project, I explored the potential for interaction using a [DCGAN.](https://arxiv.org/abs/1511.06434) The model was trained on the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset, and I achieved real-time interaction with the training outcomes.
@@ -12,17 +14,25 @@ The inspiration for this project came from the intriguing work called [Latent Fl
 
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
+https://youtube.com/shorts/LMCqDXUKD2I?feature=share
+
 [![Alt Text](https://img.youtube.com/vi/LMCqDXUKD2I/0.jpg)](https://www.youtube.com/watch?v=LMCqDXUKD2I)
 
 **Video of interact with results**
+
+https://youtu.be/mlKNuTo6hj8
 
 [![Alt Text](https://img.youtube.com/vi/mlKNuTo6hj8/0.jpg)](https://www.youtube.com/watch?v=mlKNuTo6hj8)
 
 **Video of interact with epoch**
 
+https://youtu.be/_zgJmDx9LkM
+
 [![Alt Text](https://img.youtube.com/vi/_zgJmDx9LkM/0.jpg)](https://www.youtube.com/watch?v=_zgJmDx9LkM)
 
 **Video of the complete running process**
+
+https://youtu.be/Tikv14jzoU4
 
 [![Alt Text](https://img.youtube.com/vi/Tikv14jzoU4/0.jpg)](https://www.youtube.com/watch?v=Tikv14jzoU4)
 
