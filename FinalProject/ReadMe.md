@@ -154,11 +154,46 @@ I observed that using a latent vector size of 100 leads to better training outco
 1. Model Complexity: The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
 2. Dimensionality Mismatch: The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution. As a result, the generated samples may lack quality and diversity. On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
 
+### Train6& Final-Interactive possibilities experiements
 
+In the Train6 and Final experiments, I aimed to make the model more interactive by referencing various resources such as **[Using Interact](https://colab.research.google.com/drive/1CXrsbypB-BZY6J6fvsrUgogBGof5gedN#scrollTo=3noK7P5_9gpv)**, **[Forms](https://colab.research.google.com/notebooks/forms.ipynb#scrollTo=ig8PIYeLtM8g)**, and **[BabyGAN](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb)**.
+
+I explored two different approaches to enable interaction with the code. The first approach involved using markdown language to create interactive user interfaces (UIs). However, this method only allowed for changing the input values in the original code and did not directly interact with the running results.
+
+- interactive UI written by markdown
+
+The second method involved importing ipywidgets, which allowed me to create UI elements such as buttons and sliders that could directly interact with the running code and manipulate the results. This approach provided more dynamic and real-time interaction with the model, allowing users to input information, open or hide images, and even filter the result process.
+
+- interaction created with the import of  ipywidgets
+
+**Insights:** 
+
+Enabling code and result interaction through UIs can significantly improve the usability and accessibility of the model for a wider audience. However, there are certain limitations to consider.
+
+For example, when dealing with large animations in the results, the program may often encounter issues. This could be due to the animation.embed_limit being set too small (plt.rcParams['animation.embed_limit'] = 30). Even when adjusting the value of animation.embed_limit, the program may still become disconnected. This issue may be related to the complexity of the animation itself.
+
+Furthermore, if the animation size exceeds the limitation, it can result in dropped frames and incomplete animations. In some cases, it may also lead to program disconnection.
+
+Additionally, the running time of the experiments is quite long, especially when loading animations and images. Efforts should be made to optimize the runtime to improve efficiency.
+
+Overall, exploring interactive possibilities with the model enhances its usability but requires careful consideration of limitations and performance optimization.
 ## Dataset
-
+https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
 ## Third-party resources
+https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
 
-## Clarification
+https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/dcgan.ipynb#scrollTo=NFC2ghIdiZYE
+
+https://observablehq.com/@stwind/latent-flowers-ganden
+
+https://github.com/HackerPoet/Avant-Garfield
+
+https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
+
+http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
+https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ
+
+https://openai.com/blog/chatgpt
 
 
