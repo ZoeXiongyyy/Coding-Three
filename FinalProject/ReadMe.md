@@ -41,11 +41,7 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-### Train2-**Changing epoch**
-
-After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
-
-- original results(num_epoch = 5)
+- training results(num_epoch = 5,batch_size = 128, nz(latent vector) = )
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/epoch%20%3D%205.png"
      alt="Markdown Monster icon"
@@ -54,6 +50,10 @@ After changing the dataset, I conducted two tests to evaluate the performance of
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/5epoch.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
+### Train2-**Changing epoch**
+
+After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
 
 - test1(num_epoch = 40)
 
@@ -83,7 +83,34 @@ After changing the dataset, I conducted two tests to evaluate the performance of
 
 3. Discriminator Accuracy: More epochs also provide the discriminator with more training iterations, enabling it to improve its accuracy in distinguishing between real and fake images. This improved accuracy puts more pressure on the generator to produce more realistic images.
 
-### Interaction possibilities tests
+### Train3-Changing batch_size
+The default value of batch_size in this notebook  is 128, I made 2 tests to change the batch_size and comparing the differences of outcomes.
+
+- test1(batch_size = 64)
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%2064.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch64.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+- test2(num_epoch = 256)
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%20256.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch256.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+**Insights:** 
+
+The choice of batch size can indeed have a noticeable impact on the outcome performance, particularly in terms of color accuracy.
+
+1. Color Accuracy: When using a batch size of 128, the discriminator showed a better performance in color accuracy. The generated outcomes exhibited more accurate and visually appealing colors compared to lower or higher batch size values. This suggests that a batch size of 128 allows the model to learn and capture the intricate color patterns more effectively.
+
+2. Overfitting and Underfitting: Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. This can result in underfitting, where the model fails to capture the full color range and variations in the dataset. Conversely, an excessively high batch size can lead to overfitting, where the model becomes too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
 
 
 
