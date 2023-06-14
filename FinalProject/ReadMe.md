@@ -2,6 +2,8 @@
 
 Yuzhu Xiong 21003975
 
+**FinalProject Colab link:** https://colab.research.google.com/drive/1lIiJ-Zj3uaQI-s3h0VYwr-8qQfj30omG?usp=sharing
+
 ## Basic introduction
 
 In this project, I explored the potential for interaction using a [DCGAN.](https://arxiv.org/abs/1511.06434) The model was trained on the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset, and I achieved real-time interaction with the training outcomes.
@@ -12,17 +14,25 @@ The inspiration for this project came from the intriguing work called [Latent Fl
 
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
+https://youtube.com/shorts/LMCqDXUKD2I?feature=share
+
 [![Alt Text](https://img.youtube.com/vi/LMCqDXUKD2I/0.jpg)](https://www.youtube.com/watch?v=LMCqDXUKD2I)
 
 **Video of interact with results**
+
+https://youtu.be/mlKNuTo6hj8
 
 [![Alt Text](https://img.youtube.com/vi/mlKNuTo6hj8/0.jpg)](https://www.youtube.com/watch?v=mlKNuTo6hj8)
 
 **Video of interact with epoch**
 
+https://youtu.be/_zgJmDx9LkM
+
 [![Alt Text](https://img.youtube.com/vi/_zgJmDx9LkM/0.jpg)](https://www.youtube.com/watch?v=_zgJmDx9LkM)
 
 **Video of the complete running process**
+
+https://youtu.be/Tikv14jzoU4
 
 [![Alt Text](https://img.youtube.com/vi/Tikv14jzoU4/0.jpg)](https://www.youtube.com/watch?v=Tikv14jzoU4)
 
@@ -55,7 +65,7 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-### Train2-**Changing epoch
+### Train2-Changing epoch
 
 After changing the dataset, I conducted two tests to evaluate the performance of the model with different epoch values, in addition to the original results obtained with 5 epochs. The tests were performed with 40 and 100 epochs respectively.
 
@@ -116,7 +126,7 @@ The choice of batch size can indeed have a noticeable impact on the outcome perf
 
 2. Overfitting and Underfitting: Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. This can result in underfitting, where the model fails to capture the full color range and variations in the dataset. Conversely, an excessively high batch size can lead to overfitting, where the model becomes too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
 
-### Train4-**Changing number of workers**
+### Train4-Changing number of workers
 
 The workers parameter in the DataLoader class determines the number of worker threads used for loading the data. It specifies how many subprocesses to use for data loading. I conducted two tests where I varied the workers value, and it appears that changing the workers value did not have a direct impact on the training outcome.
 
@@ -142,7 +152,7 @@ The workers parameter in the DataLoader class determines the number of worker th
 
 The primary purpose of using multiple worker threads is to enhance data loading efficiency, particularly when dealing with large datasets. However, the impact on the training outcome may not be immediately apparent in all scenarios. The influence of the workers parameter depends on various factors, including the complexity of the data loading process, hardware configuration, and dataset size.
 
-### Train5-**Changing latent vector**
+### Train5-Changing latent vector
 
 the latent vector in the original notebook is called nz, and the default value of nz is 100， and I made 2 changes(nz = 200, nz = 50) to observe the outcome.
 
@@ -178,23 +188,53 @@ In the Train6 and Final experiments, I aimed to make the model more interactive 
 
 I explored two different approaches to enable interaction with the code. The first approach involved using markdown language to create interactive user interfaces (UIs). However, this method only allowed for changing the input values in the original code and did not directly interact with the running results.
 
-- interactive UI written by markdown
+- **interactive UI written by markdown**
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui01.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui02.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui03.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
 The second method involved importing ipywidgets, which allowed me to create UI elements such as buttons and sliders that could directly interact with the running code and manipulate the results. This approach provided more dynamic and real-time interaction with the model, allowing users to input information, open or hide images, and even filter the result process.
 
-- interaction created with the import of  ipywidgets
+- **interaction created with the import of ipywidgets**
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/widget01.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/widget02.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/widget03.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
 **Insights:** 
 
-Enabling code and result interaction through UIs can significantly improve the usability and accessibility of the model for a wider audience. However, there are certain limitations to consider.
+Enabling code and result interaction through UIs can greatly enhance the usability and accessibility of the model for a wider audience. However, there are still several limitations.
 
-For example, when dealing with large animations in the results, the program may often encounter issues. This could be due to the animation.embed_limit being set too small (plt.rcParams['animation.embed_limit'] = 30). Even when adjusting the value of animation.embed_limit, the program may still become disconnected. This issue may be related to the complexity of the animation itself.
+When the epoch value is set too high or the number of frames in the animation is too large, the process of visualizing G's output on the fixed_noise batch for every epoch can become problematic. It may lead to the running process becoming collapsed or unstable.
+- **collaspe**
+  
+  <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/collapse.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
 
-Furthermore, if the animation size exceeds the limitation, it can result in dropped frames and incomplete animations. In some cases, it may also lead to program disconnection.
+One possible reason for this issue is setting the animation.embed_limit too small (e.g., plt.rcParams['animation.embed_limit'] = 30). But when adjusting the value of animation.embed_limit, the program may still experience disconnections or errors , this may related the collab platform it self.
 
-Additionally, the running time of the experiments is quite long, especially when loading animations and images. Efforts should be made to optimize the runtime to improve efficiency.
+Moreover, if the size of the animation exceeds the imposed limitation, it can result in dropped frames and incomplete animations. In some cases, it may even cause the program to disconnect entirely.
 
-Overall, exploring interactive possibilities with the model enhances its usability but requires careful consideration of limitations and performance optimization.
+Additionally, the running time of experiments can be prolonged, especially when loading animations and images.
+
 ## Dataset
 https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
 ## Third-party resources
@@ -214,4 +254,5 @@ https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downlo
 
 https://openai.com/blog/chatgpt
 
+https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/
 
