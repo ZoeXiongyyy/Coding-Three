@@ -14,6 +14,8 @@ The inspiration for this project came from the intriguing work called [Latent Fl
 
 ### Video recording
 
+**Note: All videos have been accelerated due to the slow loading of the code.**
+
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
 https://youtube.com/shorts/LMCqDXUKD2I?feature=share
