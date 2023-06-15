@@ -49,7 +49,7 @@ During my research, I compared different resources and tutorials, and I found th
 
 **P.S. - Choosing the Machine Learning Model**
 
-Throughout my exploration, I have experimented with several machine learning models and attempted to modify their datasets. However, I encountered challenges with some of them. For instance, the [BabyGAN](https://github.com/tg-bomze/BabyGAN) and [Fix the Noise: Disentangling Source Feature for Controllable Domain Translation](https://github.com/LeeDongYeun/FixNoise) models were unsuccessful in running properly. Additionally, I faced limitations in changing the dataset for models such as [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [FixNoise](https://github.com/LeeDongYeun/FixNoise).
+Throughout my exploration, I have experimented with several machine learning models and attempted to modify their datasets. However, I encountered challenges with some of them. For instance, the [BabyGAN](https://github.com/tg-bomze/BabyGAN) and [StyleGAN2: projecting images](https://github.com/woctezuma/stylegan2-projecting-images) models were unsuccessful in running properly. Additionally, I faced limitations in changing the dataset for models such as [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [FixNoise](https://github.com/LeeDongYeun/FixNoise).
 
 ### Train1-**Changing dataset**
 
