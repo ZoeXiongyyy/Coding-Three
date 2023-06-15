@@ -258,6 +258,8 @@ Additionally, the running time of experiments can be prolonged, especially when 
 ----------
 
 ## Dataset
+Art by Ai - Neural Style Transfer
+
 https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
 
 ## Original code resource
@@ -270,7 +272,14 @@ https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downlo
 ## Third-party resources
 
 ### Platform
+Google Colab
+
 https://colab.research.google.com/?utm_source=scs-index
+
+### Coding assistance
+ChatGpt
+
+https://openai.com/blog/chatgpt
 
 ### Reference
 https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
@@ -284,8 +293,6 @@ https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(E
 http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ
-
-https://openai.com/blog/chatgpt
 
 https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/
 https://github.com/woctezuma/stylegan2-projecting-images
