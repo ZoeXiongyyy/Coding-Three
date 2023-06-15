@@ -12,6 +12,8 @@ To accomplish this, I utilized various references and resources, including [Usin
 
 The inspiration for this project came from the intriguing work called [Latent Flowers GANden](https://observablehq.com/@stwind/latent-flowers-ganden).
 
+### Video recording
+
 **Video of visualizing G’s output on the fixed_noise batch for every epoch**
 
 https://youtube.com/shorts/LMCqDXUKD2I?feature=share
