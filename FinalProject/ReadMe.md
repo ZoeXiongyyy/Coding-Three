@@ -8,7 +8,7 @@ Yuzhu Xiong 21003975
 
 In this project, I explored the potential for interaction using a [DCGAN.](https://arxiv.org/abs/1511.06434) The model was trained on the [Art by Ai - Neural Style Transfer](https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer) dataset, and I achieved real-time interaction with the training outcomes.
 
-To accomplish this, I utilized various references and resources, including [Using Interact](https://colab.research.google.com/drive/1CXrsbypB-BZY6J6fvsrUgogBGof5gedN#scrollTo=3noK7P5_9gpv), the [dcgan_faces_tutorial](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ), [Forms](https://colab.research.google.com/notebooks/forms.ipynb#scrollTo=ig8PIYeLtM8g), and [BabyGAN](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb). Throughout the process, I received assistance from **ChatGPT** for code rephrasing and debugging.
+To accomplish this, I utilized various references and resources, including [Using Interact](https://colab.research.google.com/drive/1CXrsbypB-BZY6J6fvsrUgogBGof5gedN#scrollTo=3noK7P5_9gpv), the [dcgan_faces_tutorial](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ), [Forms](https://colab.research.google.com/notebooks/forms.ipynb#scrollTo=ig8PIYeLtM8g), and [BabyGAN](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb). Throughout the process, I received assistance from **ChatGPT**, especiallly in **code rephrasing and debugging**.
 
 The inspiration for this project came from the intriguing work called [Latent Flowers GANden](https://observablehq.com/@stwind/latent-flowers-ganden).
 
@@ -40,6 +40,8 @@ https://youtu.be/Tikv14jzoU4
 
 [![Alt Text](https://img.youtube.com/vi/Tikv14jzoU4/0.jpg)](https://www.youtube.com/watch?v=Tikv14jzoU4)
 
+-------
+
 ## Development process
 
 ### Motivation
@@ -50,6 +52,8 @@ During my research, I compared different resources and tutorials, and I found th
 **P.S. - Choosing the Machine Learning Model**
 
 Throughout my exploration, I have experimented with several machine learning models and attempted to modify their datasets. However, I encountered challenges with some of them. For instance, the [BabyGAN](https://github.com/tg-bomze/BabyGAN) and [StyleGAN2: projecting images](https://github.com/woctezuma/stylegan2-projecting-images) models were unsuccessful in running properly. Additionally, I faced limitations in changing the dataset for models such as [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [FixNoise](https://github.com/LeeDongYeun/FixNoise).
+
+______
 
 ### Train1-**Changing dataset**
 
@@ -69,6 +73,8 @@ The original dataset of  [dcgan_faces_tutorial](https://colab.research.google.co
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/5epoch.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
+--------     
 
 ### Train2-Changing epoch
 
@@ -102,10 +108,12 @@ After changing the dataset, I conducted two tests to evaluate the performance of
 
 3. Discriminator Accuracy: More epochs also provide the discriminator with more training iterations, enabling it to improve its accuracy in distinguishing between real and fake images. This improved accuracy puts more pressure on the generator to produce more realistic images.
 
+------------
+
 ### Train3-Changing batch_size
 The default value of batch_size in this notebook  is 128, I made 2 tests to change the batch_size and comparing the differences of outcomes.
 
-- test1(batch_size = 64)
+- **test1(batch_size = 64)**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%2064.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -114,7 +122,7 @@ The default value of batch_size in this notebook  is 128, I made 2 tests to chan
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- test2(batch_size  = 256)
+- **test2(batch_size  = 256)**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/batch_size%20%3D%20256.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -127,9 +135,11 @@ The default value of batch_size in this notebook  is 128, I made 2 tests to chan
 
 The choice of batch size can indeed have a noticeable impact on the outcome performance, particularly in terms of color accuracy.
 
-1. Color Accuracy: When using a batch size of 128, the discriminator showed a better performance in color accuracy. The generated outcomes exhibited more accurate and visually appealing colors compared to lower or higher batch size values. This suggests that a batch size of 128 allows the model to learn and capture the intricate color patterns more effectively.
+1. When using a batch size of 128, the discriminator showed a better performance in color accuracy. The generated outcomes exhibited more accurate and visually appealing colors compared to lower or higher batch size values. This suggests that a batch size of 128 allows the model to learn and capture the intricate color patterns more effectively.
 
-2. Overfitting and Underfitting: Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. This can result in underfitting, where the model fails to capture the full color range and variations in the dataset. Conversely, an excessively high batch size can lead to overfitting, where the model becomes too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
+2. Using a batch size that is too low or too high can lead to a decrease in color accuracy. This might because with a very low batch size, the model may not receive enough diverse samples in each iteration to learn the complex color representations properly. Conversely, an excessively high batch size can lead to the model become too specialized to the training data, ignoring subtle color details and generalizing poorly to unseen examples.
+
+---------------
 
 ### Train4-Changing number of workers
 
@@ -157,11 +167,13 @@ The workers parameter in the DataLoader class determines the number of worker th
 
 The primary purpose of using multiple worker threads is to enhance data loading efficiency, particularly when dealing with large datasets. However, the impact on the training outcome may not be immediately apparent in all scenarios. The influence of the workers parameter depends on various factors, including the complexity of the data loading process, hardware configuration, and dataset size.
 
+-----------
+
 ### Train5-Changing latent vector
 
 the latent vector in the original notebook is called nz, and the default value of nz is 100， and I made 2 changes(nz = 200, nz = 50) to observe the outcome.
 
-- test1(nz = 200)
+- **test1(nz = 200)**
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/nz%20%3D%20200.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -170,7 +182,7 @@ the latent vector in the original notebook is called nz, and the default value o
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-- test2(nz= 50)
+- **test2(nz= 50)**
 
 <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/nz%3D50.png"
      alt="Markdown Monster icon"
@@ -186,6 +198,8 @@ I observed that using a latent vector size of 100 leads to better training outco
 
 1. Model Complexity: The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
 2. Dimensionality Mismatch: The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution. As a result, the generated samples may lack quality and diversity. On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
+
+------------
 
 ### Train6 & Final-Interactive possibilities experiements
 
@@ -240,8 +254,13 @@ Moreover, if the size of the animation exceeds the imposed limitation, it can re
 
 Additionally, the running time of experiments can be prolonged, especially when loading animations and images.
 
+----------
+
 ## Dataset
 https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
+
+------------
+
 ## Third-party resources
 https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
 
@@ -260,4 +279,5 @@ https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downlo
 https://openai.com/blog/chatgpt
 
 https://www.analyticsvidhya.com/blog/2021/06/how-to-load-kaggle-datasets-directly-into-google-colab/
+https://github.com/woctezuma/stylegan2-projecting-images
 
