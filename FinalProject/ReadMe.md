@@ -196,8 +196,9 @@ the latent vector in the original notebook is called nz, and the default value o
 
 I observed that using a latent vector size of 100 leads to better training outcomes compared to smaller (e.g., 50) or larger (e.g., 200) sizes. I think this might because of :
 
-1. Model Complexity: The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
-2. Dimensionality Mismatch: The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution. As a result, the generated samples may lack quality and diversity. On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
+1. The generator and discriminator architectures in the tutorial are carefully designed and tuned based on empirical observations and best practices. These architectures are optimized for a latent vector size of 100. When using a smaller or larger latent vector size, the model may not perform optimally because the architecture and hyperparameters are not specifically tailored to those sizes.
+
+2. The latent vector size should ideally match the complexity and dimensionality of the underlying data distribution. If the latent vector size is too small (e.g., 50), it may not provide enough capacity for the generator to learn the intricate details of the data distribution.  On the other hand, if the latent vector size is too large (e.g., 200), it introduces unnecessary complexity and can make the training process more challenging without providing significant improvements in the generated samples.
 
 ------------
 
@@ -205,15 +206,15 @@ I observed that using a latent vector size of 100 leads to better training outco
 
 In the Train6 and Final experiments, I aimed to make the model more interactive by referencing various resources such as [Using Interact](https://colab.research.google.com/drive/1CXrsbypB-BZY6J6fvsrUgogBGof5gedN#scrollTo=3noK7P5_9gpv), [Forms](https://colab.research.google.com/notebooks/forms.ipynb#scrollTo=ig8PIYeLtM8g), and [BabyGAN](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb).
 
-I explored two different approaches to enable interaction with the code. The first approach involved using markdown language to create interactive user interfaces (UIs). However, this method only allowed for changing the input values in the original code and did not directly interact with the running results.
+I explored two different approaches to enable interaction with the code. The first approach involved using markdown language to create interactive user interfaces. However, this method only allowed for changing the input values in the original code and after the code was run, those elements could not directly interact with the running results.
 
 - **interactive UI written by markdown**
 
-    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui01.png"
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui02.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui02.png"
+    <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/ui01.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
@@ -239,18 +240,18 @@ The second method involved importing ipywidgets, which allowed me to create UI e
 
 **Insights:** 
 
-Enabling code and result interaction through UIs can greatly enhance the usability and accessibility of the model for a wider audience. However, there are still several limitations.
+Enabling code and result interaction through UI can greatly enhance the usability and accessibility of the model for a wider audience. However, there are still several limitations.
 
-When the epoch value is set too high or the number of frames in the animation is too large, the process of visualizing G's output on the fixed_noise batch for every epoch can become problematic. It may lead to the running process becoming collapsed or unstable.
+When the epoch value is set too high or the number of frames in the animation of *visualizing G’s output on the fixed_noise batch for every epoch* is too large, the process can become problematic. It may lead to the running process becoming collapsed or unstable.
 - **collaspe**
   
   <img src="https://github.com/ZoeXiongyyy/Coding-Three/blob/main/FinalProject/Video%26Pic/collapse.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-One possible reason for this issue is setting the animation.embed_limit too small (e.g., plt.rcParams['animation.embed_limit'] = 30). But when adjusting the value of animation.embed_limit, the program may still experience disconnections or errors , this may related the collab platform it self.
+One possible reason for this issue is setting the animation.embed_limit too small (e.g., plt.rcParams['animation.embed_limit'] = 30). But when adjusting the value of animation.embed_limit, the program may still experience disconnections or errors , I think this may related the collab platform itself. 
 
-Moreover, if the size of the animation exceeds the imposed limitation, it can result in dropped frames and incomplete animations. In some cases, it may even cause the program to disconnect entirely.
+Moreover, if the size of the animation exceeds the imposed limitation, it can result in dropped frames and incomplete animations. In some cases, it may even cause the program to disconnect with the host on colab entirely.
 
 Additionally, the running time of experiments can be prolonged, especially when loading animations and images.
 
@@ -259,16 +260,24 @@ Additionally, the running time of experiments can be prolonged, especially when 
 ## Dataset
 https://www.kaggle.com/datasets/vbookshelf/art-by-ai-neural-style-transfer
 
+## Original code resource
+dcgan_faces_tutoria
+
+https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/5f81194dd43910d586578638f83205a3/dcgan_faces_tutorial.ipynb#scrollTo=qBfeHTsY_NuQ
+
 ------------
 
 ## Third-party resources
+
+### Platform
+https://colab.research.google.com/?utm_source=scs-index
+
+### Reference
 https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
 
 https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/dcgan.ipynb#scrollTo=NFC2ghIdiZYE
 
 https://observablehq.com/@stwind/latent-flowers-ganden
-
-https://github.com/HackerPoet/Avant-Garfield
 
 https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb#scrollTo=iBZJPkI5Yz0v
 
